@@ -1,0 +1,32 @@
+[
+    {
+        "speciesCode": "nswowl",
+        "comName": "Northern Saw-whet Owl",
+        "sciName": "Aegolius acadicus",
+        "locId": "L207115",
+        "locName": "Tamarack Nature Center",
+        "obsDt": "2021-03-20 10:30",
+        "howMany": 1,
+        "lat": 45.099625,
+        "lng": -93.042318,
+        "obsValid": true,
+        "obsReviewed": false,
+        "locationPrivate": false,
+        "subId": "S83739909"
+    },
+    {
+        "speciesCode": "nswowl",
+        "comName": "Northern Saw-whet Owl",
+        "sciName": "Aegolius acadicus",
+        "locId": "L14097965",
+        "locName": "Dahlia St",
+        "obsDt": "2021-03-20 14:00",
+        "howMany": 1,
+        "lat": 45.061023,
+        "lng": -92.9525458,
+        "obsValid": true,
+        "obsReviewed": false,
+        "locationPrivate": true,
+        "subId": "S83761484"
+    }
+  ]
