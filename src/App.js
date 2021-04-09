@@ -27,30 +27,6 @@ class Main extends React.Component {
     };
   }
 
-  // renderHeader() {
-  //   return(
-  //     <React.Fragment>
-  //       <button
-  //         className="headerButton"
-  //         onClick={() => this.handleClick("nsow", "Northern Saw Whet Owl")}>
-  //         Northern Saw Whet
-  //       </button>
-  //       <button
-  //         className="headerButton"
-  //         onClick={() => this.handleClick("leow", "Long Eared Owl")}>
-  //         Long-Eared Owl
-  //       </button>
-  //       <button
-  //         className="headerButton"
-  //         onClick={() => this.handleClick("snow", "Snowy Owl")}>
-  //         Long-Eared Owl
-  //       </button>
-  //       <p>Selected Owl: {this.state.selectedOwl}</p>
-  //     </React.Fragment>
-  //   )
-  // }
-  //
-
   renderHeader(title) {
     return(
       <React.Fragment>
@@ -59,14 +35,7 @@ class Main extends React.Component {
     )
   }
 
-
-  handleClick(owlCode, owlText) {
-    const localVar = "just an example"
-    this.setState({selectedOwl: owlText})
-  }
-
   renderOwls() {
-
     return(
       this.state.myData.map((data, idx) =>
         <Entry
@@ -92,29 +61,28 @@ class Main extends React.Component {
 
   render() {
     return (
-      <div className="pageParent">
-        <div className="containerParent">
-          <div className="genericContainer">
-            <div className="header">
+      <div id="pageParent" className="pageParent">
+        <div id="containerParent" className="containerParent">
+          <div id="owlContainer" className="genericContainer">
+            <div id="owlHeader" className="header">
               {this.renderHeader("owls")}
             </div>
             {this.renderOwls()}
           </div>
-          <div className="genericContainer">
-            <div className="header">
+          <div id="afdContainer" className="genericContainer">
+            <div id="afdHeader" className="header">
               {this.renderHeader("mpx afd")}
             </div>
             <p className="misc">2</p>
           </div>
-          <div className="genericContainer">
-            <div className="header">
+          <div id="spcContainer" className="genericContainer">
+            <div id="spcHeader" className="header">
               {this.renderHeader("spc")}
             </div>
             <p className="misc">3</p>
           </div>
-
-          <div className="genericContainer">
-            <div className="header">
+          <div id="mesoscaleContainer" className="genericContainer">
+            <div id="mesoscaleHeader" className="header">
               {this.renderHeader("3cape")}
             </div>
             <p className="misc">4</p>
