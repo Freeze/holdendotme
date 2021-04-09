@@ -1,16 +1,8 @@
 import './App.css';
 import React from 'react';
-import myJson from './data.json'
+
 
 function Entry(props){
-  // return(
-  //   <div className="square">
-  //     <p className="date"><b>Date:</b> {props.obsDt}</p>
-  //     <p className="loc"><b>Location Name:</b> {props.locName}</p>
-  //     <p className="misc"><b>Coordinates:</b> {props.lat},{props.lng}</p>
-  //     <p className="misc"><b>Number Observed:</b> {props.howMany}</p>
-  //   </div>
-  // )
   return(
     <span className="square">
       <p className="misc"> {props.speciesCode} • {props.obsDt} • {props.locName} • {props.lat},{props.lng} • {props.howMany}</p>
@@ -22,7 +14,7 @@ class Main extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      myData: myJson,
+      myData: [],
       selectedOwl: "Northern Saw Whet Owl"
     };
   }
@@ -39,6 +31,7 @@ class Main extends React.Component {
     return(
       this.state.myData.map((data, idx) =>
         <Entry
+          key={data.obsDt}
           speciesCode={data.speciesCode}
           obsDt={data.obsDt}
           locName={data.locName}
@@ -57,6 +50,14 @@ class Main extends React.Component {
       ""
       )
     )
+  }
+
+  componentDidMount() {
+    fetch('data.json').then(response => {
+      response.json().then(data => {
+        this.setState({myData: data})
+      })
+    })
   }
 
   render() {
