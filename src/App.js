@@ -5,7 +5,9 @@ import React from 'react';
 function Entry(props){
   return(
     <span className="square">
-      <p className="misc"> {props.speciesCode} • {props.obsDt} • {props.locName} • {props.lat},{props.lng} • {props.howMany}</p>
+      <a href={props.gmapUrl}>
+        <p className="misc"> {props.speciesCode} • {props.obsDt} • {props.locName} • {props.lat},{props.lng} • {props.howMany}</p>
+      </a>
     </span>
   )
 }
@@ -14,8 +16,7 @@ class Main extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      myData: [],
-      selectedOwl: "Northern Saw Whet Owl"
+      myData: []
     };
   }
 
@@ -66,7 +67,7 @@ class Main extends React.Component {
         <div id="containerParent" className="containerParent">
           <div id="owlContainer" className="genericContainer">
             <div id="owlHeader" className="header">
-              {this.renderHeader("owls")}
+              {this.renderHeader("owls (all data provided by eBird)")}
             </div>
             {this.renderOwls()}
           </div>
