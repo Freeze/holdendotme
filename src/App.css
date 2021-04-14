@@ -18,6 +18,7 @@
 .header{
   height: 3vh;
   /* display: flex; */
+  position: sticky;
   border-style: solid;
   border-color: white;
   border-width: 1px;
