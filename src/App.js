@@ -65,7 +65,7 @@ class Main extends React.Component {
         this.setState({barredOwls: data})
       })
     })
-    fetch('data.json').then(response => {
+    fetch('grhowl.json').then(response => {
       response.json().then(data => {
         this.setState({greatHornedOwls: data})
       })
