@@ -11,7 +11,7 @@ function Entry(props){
           e.preventDefault();
           window.open(props.gmapUrl)
         }}
-        > {props.speciesCode} • {props.obsDt} • {props.locName} • {props.lat},{props.lng} • {props.city} • {props.howMany}</p>
+        > {props.speciesCode} • {props.obsDt} • {props.city} • {props.locName} • {props.lat},{props.lng} • {props.howMany}</p>
     </span>
   )
 }
