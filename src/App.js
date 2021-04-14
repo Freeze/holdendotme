@@ -20,7 +20,8 @@ class Main extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      myData: []
+      barredOwls: [],
+      greatHornedOwls: []
     };
   }
 
@@ -32,9 +33,9 @@ class Main extends React.Component {
     )
   }
 
-  renderOwls() {
+  renderOwls(owlList) {
     return(
-      this.state.myData.map((data, idx) =>
+      owlList.map((data, idx) =>
         <Entry
           key={data.obsDt}
           speciesCode={data.speciesCode}
@@ -59,28 +60,34 @@ class Main extends React.Component {
   }
 
   componentDidMount() {
-    fetch('data.json').then(response => {
+    fetch('brdowl.json').then(response => {
       response.json().then(data => {
-        this.setState({myData: data})
+        this.setState({barredOwls: data})
       })
     })
+    fetch('data.json').then(response => {
+      response.json().then(data => {
+        this.setState({greatHornedOwls: data})
+      })
+    })
+
   }
 
   render() {
     return (
       <div id="pageParent" className="pageParent">
         <div id="containerParent" className="containerParent">
-          <div id="owlContainer" className="genericContainer">
-            <div id="owlHeader" className="header">
-              {this.renderHeader("owls - click for google map (all data provided by eBird)")}
+          <div id="barredOwlContainer" className="genericContainer">
+            <div id="barredOwlHeader" className="header">
+              {this.renderHeader("barred owls - click for google map")}
             </div>
-            {this.renderOwls()}
+            {this.renderOwls(this.state.barredOwls)}
           </div>
-          <div id="afdContainer" className="genericContainer">
-            <div id="afdHeader" className="header">
-              {this.renderHeader("mpx afd")}
+          <div id="greatHornedOwlContainer" className="genericContainer">
+            <div id="greatHornedOwlHeader" className="header">
+              {this.renderHeader("great horned owls - click for google map")}
             </div>
-            <p className="misc">2</p>
+            {this.renderOwls(this.state.greatHornedOwls)}
           </div>
           <div id="spcContainer" className="genericContainer">
             <div id="spcHeader" className="header">
