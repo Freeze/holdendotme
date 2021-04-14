@@ -11,7 +11,7 @@ function Entry(props){
           e.preventDefault();
           window.open(props.gmapUrl)
         }}
-        > {props.speciesCode} • {props.obsDt} • {props.locName} • {props.lat},{props.lng} • {props.howMany}</p>
+        > {props.speciesCode} • {props.obsDt} • {props.locName} • {props.lat},{props.lng} • {props.city} • {props.howMany}</p>
     </span>
   )
 }
@@ -41,6 +41,7 @@ class Main extends React.Component {
           speciesCode={data.speciesCode}
           obsDt={data.obsDt}
           locName={data.locName}
+          city={data.city}
           lat={data.lat}
           lng={data.lng}
           howMany={data.howMany}
