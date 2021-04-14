@@ -136,7 +136,16 @@
   cursor: pointer;
 } */
 
+.owlLink{
+  font-family: Courier, Courier New;
+  font-size: 12px;
 
+  color: white;
+}
+
+.owlLink:hover{
+  cursor: pointer;
+}
 
 .misc{
   font-family: Courier, Courier New;

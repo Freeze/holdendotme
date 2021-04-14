@@ -5,9 +5,13 @@ import React from 'react';
 function Entry(props){
   return(
     <span className="square">
-      <a href={props.gmapUrl}>
-        <p className="misc"> {props.speciesCode} • {props.obsDt} • {props.locName} • {props.lat},{props.lng} • {props.howMany}</p>
-      </a>
+      <p
+        className="owlLink"
+        onClick={(e) => {
+          e.preventDefault();
+          window.open(props.gmapUrl)
+        }}
+        > {props.speciesCode} • {props.obsDt} • {props.locName} • {props.lat},{props.lng} • {props.howMany}</p>
     </span>
   )
 }
@@ -39,6 +43,7 @@ class Main extends React.Component {
           lat={data.lat}
           lng={data.lng}
           howMany={data.howMany}
+          gmapUrl={data.gmapUrl}
         />
       )
     )
@@ -67,7 +72,7 @@ class Main extends React.Component {
         <div id="containerParent" className="containerParent">
           <div id="owlContainer" className="genericContainer">
             <div id="owlHeader" className="header">
-              {this.renderHeader("owls (all data provided by eBird)")}
+              {this.renderHeader("owls - click for google map (all data provided by eBird)")}
             </div>
             {this.renderOwls()}
           </div>
